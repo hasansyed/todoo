@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Ang Ang Ang a</title>
+    <title>Angular To Do App</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -31,20 +31,21 @@
 
                 <div ng-controller="TaskController">
                     <h1>{{ title }}</h1>
-
                     <br />
-
-                    <form ng-submit="insert(newTask)">
-                        <input type="text" ng-model="newTask.content" /> 
-                        <input type="submit"  class="btn btn-info" value="Add" />
+                    <form ng-click="insert(newTask)">
+                        <div class="input-group">
+                            <input type="text" ng-model="newTask.content" class="form-control" />
+                            <span class="input-group-btn">
+                                <input type="submit" value="Add" class="btn btn-default">
+                            </span>
+                        </div>
                     </form>
                     <hr />
-                    <div ng-repeat="task in tasks | orderBy: '-addedOn'">
-                        {{ task.content }}
+                    <div ng-repeat="task in tasks | orderBy: '-addedOn'">{{ task.content }}
                         <br />
                         <p class="small">Task was added on {{ task.addedOn | date:'fullDate'}}</p>
+                        <button ng-click="destroy(task)" class="pull-right btn btn-danger">Delete</button><br />
                         <hr />
-                        
                     </div>
                 </div>
 
@@ -63,7 +64,7 @@
 <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
+<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
