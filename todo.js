@@ -3,7 +3,7 @@
 
 
 app.controller('TaskController', ['$scope', function($scope) {
-  $scope.title = 'MyToDoApp!';
+  $scope.title = 'MyToDoAppInitial!';
     
     $scope.tasks = [];
     
