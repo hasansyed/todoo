@@ -41,4 +41,12 @@ app.controller('TaskController', ['$scope', '$firebaseArray', function($scope, $
     $scope.destroy = function(task){
         $scope.tasks.splice($scope.tasks.indexOf(task),1);   
     }
+    
+    $scope.myTask = new Firebase("https://burning-torch-3852.firebaseio.com/")
+    
+    $scope.saveTask = function(){
+        $scope.myTask.push({tl:$scope.tasks}); 
+    };
+    
 }]);
+

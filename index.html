@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html ng-app="ToDoApp">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,35 +38,37 @@
                         <div class="input-group">
                             <input type="text" ng-model="newTask.content" class="form-control" />
                             <span class="input-group-btn">
-                                <input type="submit" value="Add" class="btn btn-default">
+                                    <button ng-click="insert(newTask)" class="btn btn-default">Add</button>
                             </span>
-                        </div>
-                    </form>
-                    <hr />
-                    <div ng-repeat="task in tasks | orderBy: '-addedOn'">{{ task.content }}
+                            </div>
+                        </form>
+                            <hr />
+                        <div ng-repeat="task in tasks | orderBy: '-addedOn'">{{ task.content }}
                         <br />
-                        <p class="small">Task was added on {{ task.addedOn | date:'fullDate'}}</p>
-                        <button ng-click="destroy(task)" class="pull-right btn btn-danger">Delete</button><br />
-                        <hr />
+                         
+                         <p class="small">Task was added on {{ task.addedOn | date:'fullDate'}}</p>
+                         <button ng-click="destroy(task)" class="pull-right btn btn-danger">Delete</button><br />
+                          <hr />
+                        
+                        </div>
                     </div>
+                    
                 </div>
 
             </div>
-
         </div>
-    </div>
+        
+         <hr />
+   
+    </body>
 
-    <hr />
-
-</body>
-
-<footer>
-    <p>&copy; Company 2014</p>
-</footer>
-<!-- /container -->
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+ <!-- /container -->
 
 
-<!-- Bootstrap core JavaScript
+    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -75,5 +77,5 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
-</body>
+  </body>
 </html>
