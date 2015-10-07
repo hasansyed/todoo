@@ -34,17 +34,22 @@
                         
                         <br />
                         
+
+                        
                         <form>
-                            
-                            <input type="text" ng-model="newTask.content" /> 
-                            <button ng-click="insert(newTask)" class="btn btn-info">Add</button>
-                            
+                            <div class="input-group">
+                            <input type="text" ng-model="newTask.content" class="form-control" />
+                            <span class="input-group-btn">
+                            <button ng-click="insert(newTask)" class="btn btn-default">Add</button>
+                            </span>
+                            </div>
                         </form>
                         <hr />
                         <div ng-repeat="task in tasks | orderBy: '-addedOn'">{{ task.content }}
                         <br />
                          
                          <p class="small">Task was added on {{ task.addedOn | date:'fullDate'}}</p>
+                         <button ng-click="destroy(task)" class="pull-right btn btn-danger">Delete</button><br />
                           <hr />
                         
                         </div>

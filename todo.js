@@ -15,4 +15,8 @@ app.controller('TaskController', ['$scope', function($scope) {
         task.content = "";
         }
     
+    
+    $scope.destroy = function(task){
+        $scope.tasks.splice($scope.tasks.indexOf(task),1);   
+    }
 }]);
