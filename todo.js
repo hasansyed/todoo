@@ -3,7 +3,7 @@
 
 
 app.controller('TaskController', ['$scope', function($scope) {
-  $scope.title = 'MyFirstAPPPPP!';
+  $scope.title = 'MyToDoApp!';
     
     $scope.tasks = [];
     
@@ -13,5 +13,6 @@ app.controller('TaskController', ['$scope', function($scope) {
         tl.addedOn = new Date();
         $scope.tasks.push(tl);
         task.content = "";
-    }
+        }
+    
 }]);
