@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Ang Ang Ang a</title>
+    <title>Angular To Do App</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -32,19 +32,19 @@
                     <div ng-controller="TaskController">
                         <h1>{{ title }}</h1>
                         
-                        <br />
+                            <br />
                         
 
                         
                         <form>
                             <div class="input-group">
-                            <input type="text" ng-model="newTask.content" class="form-control" />
+                                <input type="text" ng-model="newTask.content" class="form-control" />
                             <span class="input-group-btn">
-                            <button ng-click="insert(newTask)" class="btn btn-default">Add</button>
+                                    <button ng-click="insert(newTask)" class="btn btn-default">Add</button>
                             </span>
                             </div>
                         </form>
-                        <hr />
+                            <hr />
                         <div ng-repeat="task in tasks | orderBy: '-addedOn'">{{ task.content }}
                         <br />
                          
