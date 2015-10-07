@@ -41,7 +41,7 @@
                             
                         </form>
                         <hr />
-                        <div ng-repeat="task in tasks">{{ task.content }}
+                        <div ng-repeat="task in tasks | orderBy: '-addedOn'">{{ task.content }}
                         <br />
                          
                          <p class="small">Task was added on {{ task.addedOn | date:'fullDate'}}</p>
