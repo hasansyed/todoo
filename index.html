@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html ng-app="ToDoApp">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,53 +16,51 @@
     <script src="angular.js"></script>
     <script src="todo.js"></script>
 
-  </head>
-    <body>
-        
-        <div class="container">
-            
-            <div class="row">
-         
-                {{ 5 + 4 }}
-                
-                <hr />
-                
-                <div>
-                    
-                    <div ng-controller="TaskController">
-                        <h1>{{ title }}</h1>
-                        
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            {{ 5 + 4 }}
+
+            <hr />
+
+            <div>
+
+                <div ng-controller="TaskController">
+                    <h1>{{ title }}</h1>
+
+                    <br />
+
+                    <form ng-submit="insert(newTask)">
+                        <input type="text" ng-model="newTask.content" /> 
+                        <input type="submit"  class="btn btn-info" value="Add" />
+                    </form>
+                    <hr />
+                    <div ng-repeat="task in tasks | orderBy: '-addedOn'">
+                        {{ task.content }}
                         <br />
-                        
-                        <form>
-                            
-                            <input type="text" ng-model="newTask.content" /> 
-                            <button ng-click="insert(newTask)" class="btn btn-info">Add</button>
-                            
-                        </form>
+                        <p class="small">Task was added on {{ task.addedOn | date:'fullDate'}}</p>
                         <hr />
-                        <div ng-repeat="task in tasks | orderBy: '-addedOn'">{{ task.content }}
-                        <br />
-                         
-                         <p class="small">Task was added on {{ task.addedOn | date:'fullDate'}}</p>
-                          <hr />
                         
-                        </div>
                     </div>
-                    
                 </div>
 
             </div>
-        </div>
-        
-         <hr />
-   
-    </body>
 
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
- <!-- /container -->
+        </div>
+    </div>
+
+    <hr />
+
+</body>
+
+<footer>
+    <p>&copy; Company 2014</p>
+</footer>
+<!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
@@ -74,5 +72,5 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
-  </body>
+</body>
 </html>
